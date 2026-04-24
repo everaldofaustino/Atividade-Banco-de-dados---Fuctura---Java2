@@ -4,12 +4,11 @@ import Entity.Carro;
 import Entity.Produto;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
-import org.hibernate.boot.archive.scan.spi.ClassFileArchiveEntryHandler;
 import util.JpaUtil;
 
 import java.util.Locale;
 
-public class AppUpdate {
+public class AppUpdateProduto {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         EntityManager ent = JpaUtil.getEntityManager();
@@ -17,15 +16,11 @@ public class AppUpdate {
 
 
 
-        Produto produto = new Produto();
+
         Carro carro = new Carro();
         try {
 
             tx.begin();
-
-            produto = ent.find(Produto.class,3);
-            produto.setEstoque(100);
-            System.out.println(produto);
 
             carro = ent.find(Carro.class,2);
             carro.setPreco(150000);

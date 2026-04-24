@@ -2,57 +2,22 @@ package org.example;
 
 import Entity.Carro;
 import Entity.Produto;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
-
 import util.JpaUtil;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Scanner;
 
-public class AppCreate {
+public class AppCreateCarro {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         EntityManager ent = JpaUtil.getEntityManager();
         EntityTransaction tx = ent.getTransaction();
 
-        List<Produto> produtos = new ArrayList<>();
 
-        Produto p1 = new Produto();
-        p1.setNome("Feijão");
-        p1.setPreco(9.99);
-        p1.setEstoque(150);
-        p1.setDataCadastro(LocalDate.now());
-
-
-        Produto p2 = new Produto();
-        p2.setNome("Macarrão");
-        p2.setPreco(4.50);
-        p2.setEstoque(200);
-        p2.setDataCadastro(LocalDate.now());
-
-
-        Produto p3 = new Produto();
-        p3.setNome("Leite Integral");
-        p3.setPreco(5.79);
-        p3.setEstoque(80);
-        p3.setDataCadastro(LocalDate.now());
-
-
-        Produto p4 = new Produto();
-        p4.setNome("Café ");
-        p4.setPreco(15.90);
-        p4.setEstoque(60);
-        p4.setDataCadastro(LocalDate.now());
-
-        produtos.add(p1);
-        produtos.add(p2);
-        produtos.add(p3);
-        produtos.add(p4);
 
 
         List<Carro> carros = new ArrayList<>();
@@ -91,10 +56,7 @@ public class AppCreate {
 
             tx.begin();
 
-            // Equivalente SQL: INSERT INTO produto (nome, preco, estoque, data) VALUES (...)
-            for (Produto produto : produtos) {
-                ent.persist(produto);
-            }
+
 
             // Equivalente SQL: INSERT INTO produto (nome, preco, estoque, data) VALUES (...)
             for(Carro carro : carros){

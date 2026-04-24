@@ -8,7 +8,7 @@ import util.JpaUtil;
 
 import java.util.Locale;
 
-public class AppDelete {
+public class AppDeleteProduto {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         EntityManager ent = JpaUtil.getEntityManager();

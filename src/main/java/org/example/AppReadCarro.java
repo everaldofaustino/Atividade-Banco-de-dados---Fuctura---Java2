@@ -9,7 +9,7 @@ import util.JpaUtil;
 import java.util.List;
 import java.util.Locale;
 
-public class AppRead {
+public class AppReadCarro {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         EntityManager ent = JpaUtil.getEntityManager();
@@ -17,26 +17,13 @@ public class AppRead {
 
 
 
-        // Produto produto = new Produto();
+
 
         // Carro carro = new Carro();
 
         try {
 
             tx.begin();
-
-            // produto = ent.find(Produto.class,3);
-            // System.out.println(produto);
-
-
-
-            // .getResultList() - Executa a query e retorna uma List com os resultados
-            List<Produto> produtos = ent.createQuery("From Produto", Produto.class).getResultList();
-
-            for(int i =0;i<produtos.size();i++){
-                Produto produto = produtos.get(i);
-                System.out.println(produto);
-            }
 
             // carro = ent.find(Carro.class,2);
             //   System.out.println(carro);
